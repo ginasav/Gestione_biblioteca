@@ -1,0 +1,64 @@
+<h2> Classe Biblioteca </h2>
+Crea un file .py per la classe Biblioteca
+
+```ruby
+
+from typing import Any
+from libro import Libro
+
+class Biblioteca():
+    def __init__(self):
+        self._libri = []
+
+    def getListaLibri(self):
+        return self._libri
+    
+    # metodi classe Biblioteca
+    def aggiungiLibro(self, libro: Libro):
+            self._libri.append(libro)
+            print(f"Il libro {libro.getTitolo()} è stato aggiunto!")
+
+    def rimuoviLibro(self, titolo: str):
+        for libro in self._libri:
+             if libro.getTitolo() == titolo:
+                  self._libri.remove(libro)
+                  print(f"Il libro {titolo} è stato rimosso!")
+                  return
+        print(f"Il libro {titolo} non è stato trovato. Riprova.")
+
+    def cercaLibro(self, titolo: str):
+        for libro in self._libri:
+            if libro.getTitolo() == titolo:
+                print(libro.getInfoLibro())
+            else:
+                print(f"Il libro {titolo} non è stato trovato. Riprova.")
+    
+    def prestitoLibro(self, titolo: str):
+         for libro in self._libri:
+            if libro.getTitolo() == titolo:
+                if libro.getDisponibilità():
+                    libro.setDisponibilità(False)
+                    print(f"Il libro {titolo} adesso è in prestito.")
+                else:
+                    print(f"Il libro {titolo} non è disponibile per il prestito.")
+                return
+            print(f"Il libro {titolo} non è stato trovato. Riprova.")
+
+    def restituisciLibro(self, titolo: str):
+        for libro in self._libri:
+            if libro.getTitolo() == titolo:
+                libro.setDisponibilità(True)
+                print(f"Il libro {titolo} è stato restituito.")
+            else:
+                print(f"Il libro {titolo} è già in prestito!")
+
+    def mostraLibri (self):
+        disponibili = [libro.getInfoLibro() for libro in self._libri if libro.getDisponibilità()]
+        if disponibili:
+            print("Libri disponibili:")
+            for info in disponibili:
+                print(info)
+        else:
+            print("Nessun libro disponibile al momento.")
+
+```
