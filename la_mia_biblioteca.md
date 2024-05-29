@@ -3,7 +3,7 @@ In quest'altro file .py vado a creare la mia biblioteca e utilizzare i metodi cr
 
 ```ruby
 
-from typing import Any
+from typing import Any #queste tre righe di codice per richiamare le classi create in altri file
 from libro import Libro
 from biblioteca import Biblioteca
 
