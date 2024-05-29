@@ -1,0 +1,35 @@
+<h2> Classe per libro </h2>
+Crea una classe per libro in un file .py
+
+```ruby
+
+class Libro:
+    def __init__(self, titolo: str,
+                autore: str,
+                anno_pubblicazione: int,
+                disponibile: bool):
+        self._titolo= titolo
+        self._autore= autore
+        self._anno_pubblicazione= anno_pubblicazione
+        self._disponibile= True
+
+    def getTitolo(self):
+        return self._titolo
+    
+    def getAutore(self):
+        return self._autore
+    
+    def getAnnoPubblicazione(self):
+        return self._anno_pubblicazione
+    
+    def getDisponibilità(self):
+        return self._disponibile
+    
+    def setDisponibilità(self, 
+                         nuova_disponibilità= bool):
+        self._disponibile= nuova_disponibilità
+
+    def getInfoLibro(self):
+        return f"Titolo: {self._titolo},\nAutore: {self._autore},\nAnno di pubblicazione: {self._anno_pubblicazione},\nDisponibile: {self._disponibile}"
+
+```
