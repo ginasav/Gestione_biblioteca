@@ -3,7 +3,7 @@ Crea un file .py per la classe Biblioteca
 
 ```ruby
 
-from typing import Any
+from typing import Any #queste due righe di codice per richiamare le classi create in altri file
 from libro import Libro
 
 class Biblioteca():
